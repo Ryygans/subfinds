@@ -14,7 +14,7 @@ ascii_art = GREEN + """
 |  $$$$$$/|  $$$$$$/| $$$$$$$/| $$      | $$| $$  | $$|  $$$$$$$ /$$$$$$$/
  \______/  \______/ |_______/ |__/      |__/|__/  |__/ \_______/|_______/ 
 """ + RESET
-
+print(GREEN + "Coded By : Zann" + RESET)
 def get_subdomains_crtsh(domain):
     url = f"https://crt.sh/?q=%25.{domain}&output=json"
     response = requests.get(url)
@@ -28,19 +28,19 @@ def main():
     os.system('clear')
     print(ascii_art)
     
-    domain = input(GREEN + "Masukkan domain: " + RESET)
+    domain = input(GREEN + "Enter your domain: " + RESET)
     subdomains = get_subdomains_crtsh(domain)
-    print(GREEN + "\nSubdomain yang ditemukan:" + RESET)
+    print(GREEN + "\nSubdomain find!:" + RESET)
     for sub in subdomains:
         print(GREEN + sub + RESET)
     repeat()
 
 def repeat():
-    exit_choice = input(GREEN + 'Mau nyari lagi? (y/n): ' + RESET)
+    exit_choice = input(GREEN + 'want to search again? (y/n): ' + RESET)
     if exit_choice.lower() == 'y':
         main()
     else:
-        print(GREEN + 'Anda telah keluar.' + RESET)
+        print(GREEN + 'You have logged out.' + RESET)
 
 if __name__ == "__main__":
     main()
